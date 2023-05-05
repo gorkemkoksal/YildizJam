@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private Vector3 speed;
+    private IObjectPool<Bullet> pool;
     void Update()
     {
-        
+        transform.position += speed * Time.deltaTime;
+    }
+    public void SetPool(IObjectPool<Bullet> pool)
+    {
+        this.pool = pool;
+    }
+    private void OnBecameInvisible()
+    {
+        pool.Release(this);
     }
 }

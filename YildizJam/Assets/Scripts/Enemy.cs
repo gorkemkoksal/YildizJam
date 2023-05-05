@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(player.position, transform.position) < hitDistance && !isAttacking)
+        if (Mathf.Abs(player.position.y - transform.position.y) <= 0.5f && Mathf.Abs(player.position.x - transform.position.x) < hitDistance && !isAttacking)
         {
             isAttacking = true;
             DOTween.Kill(transform);
