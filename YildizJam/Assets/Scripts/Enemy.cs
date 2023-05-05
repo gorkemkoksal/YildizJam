@@ -31,11 +31,11 @@ public class Enemy : MonoBehaviour
     }
     private void PatrolR()
     {
-        transform.DOLocalMove(patrolPoint1.position, movementSpeed).SetDelay(2.5f).onComplete = PatrolL;
+        transform.DOLocalMove(patrolPoint1.position, movementSpeed).SetEase(Ease.Linear).SetDelay(2.5f).onComplete = PatrolL;
     }
     private void PatrolL()
     {
-        transform.DOLocalMove(patrolPoint2.position, movementSpeed).SetDelay(2.5f).onComplete = PatrolR;
+        transform.DOLocalMove(patrolPoint2.position, movementSpeed).SetEase(Ease.Linear).SetDelay(2.5f).onComplete = PatrolR;
     }
     private void Attack()
     {

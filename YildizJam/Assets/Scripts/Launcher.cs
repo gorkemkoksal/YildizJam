@@ -11,6 +11,21 @@ public class Launcher : MonoBehaviour
     {
         bulletPool = new ObjectPool<Bullet>(CreateBullet, OnGet, OnRelease, OnBulletDestroy, maxSize: 10);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SetBullet(0);
+            print(bulletPrefab);      //ates etmeleri buraya koy (Update icine)
+            bulletPool.Get();
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            SetBullet(1);
+            print(bulletPrefab);
+            bulletPool.Get();
+        }
+    }
     private void OnGet(Bullet bullet)
     {
         bullet.transform.position = spawnPoint.position;
@@ -32,6 +47,7 @@ public class Launcher : MonoBehaviour
     }
     public void SetBullet(int index)
     {
-        bulletPrefab = bulletPrefabs[index];           //bunu player silah degisme yerinde cagirmamiz lazim
+        bulletPrefab = bulletPrefabs[index];           //bunu player silah degisme yerinde cagirmamiz lazim(simdilik dengesiz biraz)
     }
+
 }
