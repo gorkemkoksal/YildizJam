@@ -11,9 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float hitDistance = 3f;
     [SerializeField] private Bullet bulletPrefab;
-   // private float 
+    [SerializeField] private float timeBetweenAttacks = 1f;
+    private float timeSinceLastAttack;
     private bool isAttacking = false;
-    private bool isFacingLeft;
 
     private void Start()
     {
@@ -21,34 +21,34 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
+        timeSinceLastAttack += Time.deltaTime;
+
         if (Mathf.Abs(player.position.y - transform.position.y) <= 0.5f && Mathf.Abs(player.position.x - transform.position.x) < hitDistance && !isAttacking)
         {
             isAttacking = true;
             DOTween.Kill(transform);
-            Attack();
+            Attack(player.position.x>transform.position.x);
         }
-        else if (isAttacking)
+        else if (isAttacking && timeSinceLastAttack > timeBetweenAttacks)
         {
+            timeSinceLastAttack = 0f;
             isAttacking = false;
-            StartCoroutine(Attack());
+            Attack(player.position.x > transform.position.x);
         }
     }
     private void PatrolR()
     {
-        isFacingLeft = false;
         transform.DOLocalMove(patrolPoint1.position, movementSpeed).SetEase(Ease.Linear).SetDelay(2.5f).onComplete = PatrolL;
     }
     private void PatrolL()
     {
-        isFacingLeft = true;
         transform.DOLocalMove(patrolPoint2.position, movementSpeed).SetEase(Ease.Linear).SetDelay(2.5f).onComplete = PatrolR;
     }
-    IEnumerator Attack()
+    private void Attack(bool isLeft)
     {
         print("Attack");
 
         Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.SetBulletSpeed(isFacingLeft);
-        yield return new WaitForSeconds(1f);
+        bullet.SetBulletSpeed(isLeft);
     }
 }
