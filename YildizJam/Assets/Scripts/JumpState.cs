@@ -49,7 +49,7 @@ public class JumpState : PlayerBaseState
             jumpCounter = 2;
             Jump(characterIndex);
         }
-        if (stateMachine.PlayerRb.velocity.y == 0 && stateMachine.GroundChecker.IsGrounded)
+        if (stateMachine.GroundChecker.IsGrounded)
         {
             stateMachine.SwitchState(new RunState(stateMachine, characterIndex));
         }
