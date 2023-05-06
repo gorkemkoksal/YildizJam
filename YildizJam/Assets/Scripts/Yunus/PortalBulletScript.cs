@@ -6,6 +6,8 @@ public class PortalBulletScript : MonoBehaviour
 {
     [SerializeField] private GameObject redPortalFirst;
     [SerializeField] private GameObject bluePortalFirst;
+    public static Vector3 redPortalPosition;
+    public static Vector3 bluePortalPosition;
 
 
 
@@ -18,7 +20,7 @@ public class PortalBulletScript : MonoBehaviour
         if (PortalGun.portalHolder == "red")
 
             Instantiate(redPortalFirst, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+            Destroy(gameObject);
 
         if (PortalGun.portalHolder == "blue")
         {

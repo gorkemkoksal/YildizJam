@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Surface
   - Wall
+  - BluePortalBullet
+  - RedPortalBullet
+  - RedPortal
+  - BluePortal
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - PortalBullet
+  - Player
   - 
   - 
   - 

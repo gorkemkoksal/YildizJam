@@ -4,34 +4,55 @@ using UnityEngine;
 
 public class PortalScript : MonoBehaviour
 {
-    private GameObject redPortal;
-    private GameObject bluePortal;
+    [SerializeField] private GameObject redPortal;
+    [SerializeField] private GameObject bluePortal;
+    [SerializeField] private GameObject player;
 
-    private GameObject player;
+    private bool transformation = true;
 
-    void Start()
+    void Update()
     {
-        redPortal = GameObject.FindGameObjectWithTag("RedPortal");
-        bluePortal = GameObject.FindGameObjectWithTag("BluePortal");
-
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
+        if (transformation == false)
         {
-            if (this.gameObject.tag == "RedPortal")
+            StartCoroutine(Teleport());
+
+        }
+    }
+
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (transformation == true)
+        {
+            if (other.gameObject.tag == "RedPortal")
             {
-                player.transform.position = bluePortal.transform.position;
+                player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
+                transformation = false;
+
             }
-            if (this.gameObject.tag == "BluePortal")
+            if (other.gameObject.tag == "BluePortal")
             {
-                player.transform.position = redPortal.transform.position;
+                player.transform.position = GameObject.Find("RedPortal(Clone)").transform.position;
+                transformation = false;
+
             }
+
 
         }
 
+        
+
+
+
 
     }
-
-
+    IEnumerator Teleport()
+        {
+            transformation = false;
+            yield return new WaitForSeconds(0.001f);
+            transformation = true;
+        }
 }
