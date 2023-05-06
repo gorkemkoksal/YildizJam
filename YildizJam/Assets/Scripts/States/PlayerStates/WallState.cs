@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallState : PlayerBaseState
 {
+
+    //private readonly int StickHash = Animator.StringToHash("Stick");
     private float hangTime = 2f;
     private float timer = 0;
     private int wallDir;
@@ -13,7 +15,7 @@ public class WallState : PlayerBaseState
     }
     public override void Enter()
     {
-        stateMachine.Yaz("yapis");
+        //  stateMachine.Animator.CrossFadeInFixedTime(StickHash, CrossFadeDuration);
         stateMachine.PlayerRb.velocity = Vector2.zero;
         stateMachine.PlayerRb.isKinematic = true;
     }
@@ -22,7 +24,10 @@ public class WallState : PlayerBaseState
         stateMachine.PlayerRb.isKinematic = false;
     }
     public override void FixedTick(float fixedDeltatime) { }
-    public override void OnTriggerEnter2D(Collider2D other) { }
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+    }
     public override void Tick(float deltaTime)
     {
         timer += Time.deltaTime;

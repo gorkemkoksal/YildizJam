@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
@@ -19,8 +20,6 @@ public abstract class PlayerBaseState : State
     }
     protected void Move(float input, int characterIndex)
     {
-        //stateMachine.PlayerRb.MovePosition(new Vector2(stateMachine.transform.position.x, stateMachine.transform.position.y) + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
-        // stateMachine.PlayerRb.AddForce(stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime * input);
         stateMachine.PlayerRb.velocity = new Vector2(input * stateMachine.MovementSpeed[characterIndex], stateMachine.PlayerRb.velocity.y);
     }
     protected void FlipSprite()
@@ -33,6 +32,17 @@ public abstract class PlayerBaseState : State
     }
     protected void Jump(int characterIndex, int wallDir = 0)
     {
-        stateMachine.PlayerRb.velocity += new Vector2(wallDir*4f, stateMachine.JumpPower[characterIndex]);     // burasi guncellenebilir
+        stateMachine.PlayerRb.velocity += new Vector2(wallDir * 4f, stateMachine.JumpPower[characterIndex]);     // burasi guncellenebilir
+    }
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.position.x > stateMachine.transform.position.x)
+        {
+            stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, -1));
+        }
+        else
+        {
+            stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
+        }
     }
 }
