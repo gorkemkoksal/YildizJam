@@ -9,6 +9,13 @@ public class ModuleGun : MonoBehaviour
     public static  float moduleCoolDown;
 
     public static bool moduleShooting = true;
+
+    public AudioClip moduleSound;
+    public AudioClip m4Sound;
+
+    AudioSource moduleSoundEffect;
+
+
     
 
     [SerializeField] private float bulletVelocity = 20f;
@@ -18,6 +25,7 @@ public class ModuleGun : MonoBehaviour
         mouseTransform = this.transform;
         bulletVelocity = 20f;
         moduleCoolDown = 3f;
+        moduleSoundEffect = GetComponent<AudioSource>();
     }
     private void LookAtMouse()
     {
