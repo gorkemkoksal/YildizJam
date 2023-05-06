@@ -54,6 +54,8 @@ public class ModuleGun : MonoBehaviour
          direction.Normalize();
         if(Input.GetMouseButtonDown(0))
         {
+            moduleSoundEffect.clip = m4Sound;
+            moduleSoundEffect.Play();
          
          
          GameObject bullet = (GameObject)Instantiate(normalBullet, transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
@@ -66,6 +68,8 @@ public class ModuleGun : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1) & moduleShooting == true)
         {
+            moduleSoundEffect.clip = moduleSound;
+            moduleSoundEffect.Play();
             
         
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
