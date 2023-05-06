@@ -19,15 +19,6 @@ public class ModuleGun : MonoBehaviour
         bulletVelocity = 20f;
         moduleCoolDown = 3f;
     }
-
-   
-    void Update()
-    {
-       LookAtMouse();
-       BulletShoot();
-       StartCoroutine(ModuleShoot());    
-    }
-
     private void LookAtMouse()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition - mouseTransform.position);
@@ -37,13 +28,25 @@ public class ModuleGun : MonoBehaviour
         
 
     }
+
+   
+    void Update()
+    {
+       LookAtMouse();
+       BulletShoot();
+       StartCoroutine(ModuleShoot());    
+    }
+
+   
+
     private void BulletShoot()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-              Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
          Vector2 direction = (Vector2)((worldMousePos - transform.position));
          direction.Normalize();
+        if(Input.GetMouseButtonDown(0))
+        {
+         
          
          GameObject bullet = (GameObject)Instantiate(normalBullet, transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
          

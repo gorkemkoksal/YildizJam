@@ -70,6 +70,7 @@ public class PortalGun : MonoBehaviour
 
     private void PortalSelect()
     {
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             portalHolder = "blue";
@@ -84,6 +85,7 @@ public class PortalGun : MonoBehaviour
 
     private void PortalShoot()
     {
+        
 
         if (portalHolder == "blue")
         {
