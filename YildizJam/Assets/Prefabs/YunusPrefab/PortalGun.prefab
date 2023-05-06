@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 771088309223343404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 0.035238363, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.2004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,5 +100,4 @@ MonoBehaviour:
   portalRed: {fileID: 2957088918857128904, guid: 168492c897029024ab129818aa9e4277, type: 3}
   portalBlue: {fileID: 1332188833522626389, guid: a01d095c92ad8a14bba690781b8e3cb9, type: 3}
   normalPortalBullet: {fileID: 367931764489203597, guid: 5c5ac8c1855df944f8359df19d79c53b, type: 3}
-  portalHolder: 
   bulletVelocity: 20

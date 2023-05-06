@@ -9,17 +9,21 @@ public class PortalGun : MonoBehaviour
     [SerializeField] private GameObject normalPortalBullet;
 
     public static string portalHolder;
+    AudioSource portalSoundEffect;
+    public AudioClip prt;
 
 
 
 
 
-    [SerializeField] private float bulletVelocity = 20f;
+    [SerializeField] private float bulletVelocity = 3f;
     private Transform mouseTransform;
     void Start()
     {
         mouseTransform = this.transform;
         bulletVelocity = 20f;
+        portalSoundEffect = GetComponent<AudioSource>();
+
 
     }
 
@@ -48,6 +52,7 @@ public class PortalGun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
             Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (Vector2)((worldMousePos - transform.position));
             direction.Normalize();
@@ -78,6 +83,8 @@ public class PortalGun : MonoBehaviour
 
         if (portalHolder == "blue")
         {
+            portalSoundEffect.clip = prt;
+            portalSoundEffect.Play();
             Destroy(GameObject.FindGameObjectWithTag("BluePortal"));
             Destroy(GameObject.FindGameObjectWithTag("BluePortalBullet"));
             
@@ -100,6 +107,8 @@ public class PortalGun : MonoBehaviour
 
         if (portalHolder == "red")
         {
+            portalSoundEffect.clip = prt;
+            portalSoundEffect.Play();
             Destroy(GameObject.FindGameObjectWithTag("RedPortal"));
             Destroy(GameObject.FindGameObjectWithTag("RedPortalBullet"));
 

@@ -8,12 +8,28 @@ public class Module : MonoBehaviour
     
     [SerializeField] private  GameObject moduleGun;
     
+
+    Rigidbody2D rb;
+
+    private void Start() {
+        rb = GetComponent<Rigidbody2D>();
+    }
+    
     void Update()
     {
-        Destroy(gameObject , ModuleGun.moduleCoolDown - 0.5f);
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = transform.position;
+            Destroy(gameObject);
+        }
         
        
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
     
 }
