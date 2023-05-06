@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RedPortal
+  - BluePortal
+  - BluePortalBullet
+  - RedPortalBullet
+  - Undefined
+  - Enemy
+  - Surface
+  - Wall
   layers:
   - Default
   - TransparentFX
