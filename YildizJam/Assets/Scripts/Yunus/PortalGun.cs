@@ -31,7 +31,7 @@ public class PortalGun : MonoBehaviour
 
     void Update()
     {
-       
+        LookAtMouse();
         BulletShoot();
         PortalSelect();
         if (Input.GetMouseButtonDown(1))
