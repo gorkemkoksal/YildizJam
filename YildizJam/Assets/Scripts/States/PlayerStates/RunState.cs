@@ -18,7 +18,7 @@ public class RunState : PlayerBaseState
     {
         Move(Input.GetAxis("Horizontal"), characterIndex);
     }
-    public override void OnTriggerEnter(Collider other) { }
+    public override void OnTriggerEnter2D(Collider2D other) { }
 
     public override void Tick(float deltaTime)
     {

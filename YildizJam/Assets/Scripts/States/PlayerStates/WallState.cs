@@ -22,7 +22,7 @@ public class WallState : PlayerBaseState
         stateMachine.PlayerRb.isKinematic = false;
     }
     public override void FixedTick(float fixedDeltatime) { }
-    public override void OnTriggerEnter(Collider other) { }
+    public override void OnTriggerEnter2D(Collider2D other) { }
     public override void Tick(float deltaTime)
     {
         timer += Time.deltaTime;

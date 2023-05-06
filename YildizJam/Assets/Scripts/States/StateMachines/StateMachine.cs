@@ -19,8 +19,8 @@ public class StateMachine : MonoBehaviour
     {
         currentState?.FixedTick(Time.fixedDeltaTime);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        currentState?.OnTriggerEnter(other);
+        currentState?.OnTriggerEnter2D(other);
     }
 }

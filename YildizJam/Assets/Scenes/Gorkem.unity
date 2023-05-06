@@ -150,7 +150,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 293889285}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cb2f024357655944bbec51816743578b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -603,7 +603,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7940281236749552335, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
   m_PrefabInstance: {fileID: 7940281236293615414}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &752023040
+--- !u!61 &752023046
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,7 +627,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.15, y: 0.6}
   m_EdgeRadius: 0
 --- !u!1 &1329624358
 GameObject:
@@ -968,6 +968,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
+      propertyPath: <JumpPower>k__BackingField.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
+      propertyPath: <MovementSpeed>k__BackingField.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552334, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1014,6 +1022,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552335, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940281237625527475, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8417797
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940281237625527475, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
+      propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
