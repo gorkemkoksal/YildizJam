@@ -12,27 +12,21 @@ public class ModuleGun : MonoBehaviour
     
 
     [SerializeField] private float bulletVelocity = 20f;
+    AudioSource moduleSoundEffect;
+    public AudioClip M4Sound;
+    public AudioClip ModuleSound;
     private Transform mouseTransform;
     void Start()
     {
         mouseTransform = this.transform;
         bulletVelocity = 20f;
         moduleCoolDown = 3f;
+        moduleSoundEffect = GetComponent<AudioSource>();
     }
-    private void LookAtMouse()
-    {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition - mouseTransform.position);
-        float angle = Mathf.Atan2(direction.y , direction.x ) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle-90 , Vector3.forward);
-        mouseTransform.rotation = rotation;
-        
-
-    }
-
-   
+    
     void Update()
     {
-       LookAtMouse();
+       
        BulletShoot();
        StartCoroutine(ModuleShoot());    
     }
@@ -46,6 +40,8 @@ public class ModuleGun : MonoBehaviour
          direction.Normalize();
         if(Input.GetMouseButtonDown(0))
         {
+            moduleSoundEffect.clip = M4Sound;
+            moduleSoundEffect.PlayOneShot(M4Sound);
          
          
          GameObject bullet = (GameObject)Instantiate(normalBullet, transform.position + (Vector3)(direction * 0.5f),Quaternion.identity);
@@ -58,6 +54,8 @@ public class ModuleGun : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1) & moduleShooting == true)
         {
+            moduleSoundEffect.clip = ModuleSound;
+            moduleSoundEffect.PlayOneShot(ModuleSound);
             
         
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
