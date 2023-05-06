@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1556834251720024845}
   - component: {fileID: 6881723706430523251}
   - component: {fileID: -565548828629554805}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: RedPortal
   m_TagString: RedPortal
   m_Icon: {fileID: 0}

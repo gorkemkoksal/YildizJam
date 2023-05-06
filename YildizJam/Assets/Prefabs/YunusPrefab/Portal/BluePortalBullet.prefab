@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6370013397627980584}
   - component: {fileID: 7070546106539796230}
   - component: {fileID: -9197553782525882819}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BluePortalBullet
   m_TagString: BluePortalBullet
   m_Icon: {fileID: 0}
