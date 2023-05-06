@@ -970,11 +970,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: <KnockBackForce>k__BackingField.x
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: <KnockBackForce>k__BackingField.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: <KnockBackDuration>k__BackingField
@@ -992,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7940281236749552334, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552335, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1002,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552335, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552335, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_LocalPosition.z

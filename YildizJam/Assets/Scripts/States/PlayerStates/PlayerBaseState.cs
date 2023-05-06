@@ -36,13 +36,16 @@ public abstract class PlayerBaseState : State
     }
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.position.x > stateMachine.transform.position.x)
+        if (other.CompareTag("Enemy"))
         {
-            stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, -1));
-        }
-        else
-        {
-            stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
+            if (other.transform.position.x > stateMachine.transform.position.x)
+            {
+                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, -1));
+            }
+            else
+            {
+                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
+            }
         }
     }
 }
