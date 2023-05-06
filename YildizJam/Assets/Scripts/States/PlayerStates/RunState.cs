@@ -8,8 +8,11 @@ public class RunState : PlayerBaseState
     public override void Enter()
     {
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
+        stateMachine.GroundChecker.OnFalling += OnFall;
     }
-    public override void Exit() { }
+    public override void Exit() {
+        stateMachine.GroundChecker.OnFalling -= OnFall;
+    }
     public override void FixedTick(float fixedDeltatime)
     {
         Move(Input.GetAxis("Horizontal"), characterIndex);
@@ -25,4 +28,8 @@ public class RunState : PlayerBaseState
             stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
         }
     }
+    private void OnFall()
+    {
+        stateMachine.SwitchState(new FallingState(stateMachine, characterIndex));
+        stateMachine.Yaz("fallingstate");    }
 }

@@ -13,7 +13,7 @@ public class JumpState : PlayerBaseState
         Jump(characterIndex);
         stateMachine.GroundChecker.IsGrounded = false;
         jumpCounter = 1;
-        //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
+    //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
 
     }
     public override void Exit()
@@ -22,8 +22,6 @@ public class JumpState : PlayerBaseState
     }
     public override void FixedTick(float fixedDeltatime)
     {
-        // Move(new Vector3(Input.GetAxis("Horizontal"), stateMachine.transform.position.y), characterIndex);
-        //  MoveInput.GetAxis("Horizontal"), 0), characterIndex);
         Move(Input.GetAxis("Horizontal"), characterIndex);
     }
     public override void OnTriggerEnter2D(Collider2D other)
