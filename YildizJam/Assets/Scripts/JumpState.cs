@@ -28,6 +28,8 @@ public class JumpState : PlayerBaseState
     }
     public override void OnTriggerEnter2D(Collider2D other)
     {
+        base.OnTriggerEnter2D(other);
+
         if (other.CompareTag("Wall") && characterIndex == 2)
         {
             if (other.transform.position.x < stateMachine.transform.position.x)

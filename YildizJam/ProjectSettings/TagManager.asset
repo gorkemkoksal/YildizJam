@@ -10,6 +10,10 @@ TagManager:
   - RedPortalBullet
   - RedPortal
   - BluePortal
+<<<<<<< Updated upstream
+=======
+  - Enemy
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
