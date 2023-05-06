@@ -10,10 +10,17 @@ public class PortalScript : MonoBehaviour
     [SerializeField] private GameObject bluePortal;
     [SerializeField] private GameObject player;
 
+    AudioSource portalSoundEffect;
+    public AudioClip prt;
+
     
 
     private bool transformation = true;
 
+    void Start()
+    {
+        portalSoundEffect = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (transformation == false)
@@ -37,12 +44,16 @@ public class PortalScript : MonoBehaviour
              {
 
                 player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
+                portalSoundEffect.clip = prt;
+                portalSoundEffect.Play();
                 transformation = false;
 
              }
              if (other.gameObject.tag == "BluePortal")
              {
                 player.transform.position = GameObject.Find("RedPortal(Clone)").transform.position;
+                portalSoundEffect.clip = prt;
+                portalSoundEffect.Play();
                 transformation = false;
 
              }

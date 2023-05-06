@@ -11,6 +11,7 @@ public class PortalGun : MonoBehaviour
     public static string portalHolder;
     AudioSource portalSoundEffect;
     public AudioClip prt;
+    public AudioClip shotgun;
 
 
 
@@ -52,6 +53,9 @@ public class PortalGun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            portalSoundEffect.clip = shotgun;
+            portalSoundEffect.Play();
+
 
             Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (Vector2)((worldMousePos - transform.position));
