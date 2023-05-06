@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,24 +9,24 @@ public class RunState : PlayerBaseState
     //private readonly int MovementBlendTreeHash = Animator.StringToHash("MovementBlendTree");
     //private readonly int MovementSpeedHash = Animator.StringToHash("MovementSpeed");
 
-    private event Action onJump;
     public RunState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex)
     {
     }
 
     public override void Enter()
     {
+
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
-        onJump += OnJump;
+
     }
 
     public override void Exit()
     {
-        onJump -= OnJump;
+
     }
     public override void FixedTick(float fixedDeltatime)
     {
-        Move(new Vector3(Input.GetAxis("Horizontal"), 0, 0), characterIndex);
+        Move(Input.GetAxis("Horizontal"), characterIndex);
     }
 
     public override void OnTriggerEnter(Collider other)
@@ -34,19 +35,17 @@ public class RunState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded) || stateMachine.PlayerRb.velocity.y < 0)
+
+        if (Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded)
         {
-            onJump?.Invoke();
-        }
-        //if (Input.GetAxis("Horizontal") == 0)
-        //{
-        //    stateMachine.Animator.SetFloat(MovementSpeedHash, 0, AnimatorDampTime, deltaTime);
-        //    return;
-        //}
-        //stateMachine.Animator.SetFloat(MovementSpeedHash, 1, AnimatorDampTime, deltaTime);
+            // stateMachine.GroundChecker.IsGrounded = false;
+            // Jump(characterIndex);
+            stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
+        }        
     }
-    private void OnJump()
-    {
-        stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
-    }
+    //private void Jump(int characterIndex)
+    //{
+    //    stateMachine.PlayerRb.velocity += new Vector2(0, stateMachine.JumpPower[characterIndex]);
+    //    stateMachine.Yaz("nasilolum,");
+    //}
 }
