@@ -20,9 +20,9 @@ public abstract class PlayerBaseState : State
     {
         stateMachine.PlayerRb.MovePosition(stateMachine.transform.position + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
     }
-    protected void Jump(int characterIndex,float deltaTime)
+    protected void Jump(int characterIndex)
     {
-        stateMachine.PlayerRb.AddForce(new Vector2(stateMachine.PlayerRb.velocity.x, stateMachine.JumpPower[characterIndex]) * deltaTime);
+        stateMachine.PlayerRb.AddForce(new Vector2(stateMachine.PlayerRb.velocity.x, stateMachine.JumpPower[characterIndex]));
 
     }
 }
