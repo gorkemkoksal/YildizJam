@@ -14,17 +14,21 @@ public class Launcher : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            SetBullet(0);
-            print(bulletPrefab);      //ates etmeleri buraya koy (Update icine)
-            bulletPool.Get();
+        {                                                                      
+         //   bulletPool.Get();                        //ates etmeleri buraya koy (Update icine)
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            SetBullet(1);
-            print(bulletPrefab);
-            bulletPool.Get();
-        }
+        //else if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //    SetBullet(1);
+        //    print(bulletPrefab);
+        //    bulletPool.Get();
+        //}
+    }
+    private Bullet CreateBullet()
+    {
+        Bullet bullet = Instantiate(bulletPrefab);
+        bullet.SetPool(bulletPool);
+        return bullet;
     }
     private void OnGet(Bullet bullet)
     {
@@ -39,15 +43,9 @@ public class Launcher : MonoBehaviour
     {
         Destroy(bullet.gameObject);
     }
-    private Bullet CreateBullet()
-    {
-        Bullet bullet = Instantiate(bulletPrefab);
-        bullet.SetPool(bulletPool);
-        return bullet;
-    }
-    public void SetBullet(int index)
-    {
-        bulletPrefab = bulletPrefabs[index];           //bunu player silah degisme yerinde cagirmamiz lazim(simdilik dengesiz biraz)
-    }
+    //public void SetBullet(int index)
+    //{
+    //    bulletPrefab = bulletPrefabs[index];           //bunu player silah degisme yerinde cagirmamiz lazim(simdilik dengesiz biraz)
+    //}
 
 }
