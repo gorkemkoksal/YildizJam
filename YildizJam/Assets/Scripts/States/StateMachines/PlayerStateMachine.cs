@@ -17,7 +17,7 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
-        SwitchState(new RunState(this,1));
+        SwitchState(new RunState(this,2));
         
     }
     public void Yaz(string something)

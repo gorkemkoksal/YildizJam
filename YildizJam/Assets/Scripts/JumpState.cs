@@ -7,7 +7,7 @@ public class JumpState : PlayerBaseState
 {
     //private readonly int JumpHash = Animator.StringToHash("Jump");
     private bool isWallTouched;
-    public JumpState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex) {  }
+    public JumpState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex) { }
     public override void Enter()
     {
         Jump(characterIndex);
@@ -22,7 +22,20 @@ public class JumpState : PlayerBaseState
         //  MoveInput.GetAxis("Horizontal"), 0), characterIndex);
         Move(Input.GetAxis("Horizontal"), characterIndex);
     }
-    public override void OnTriggerEnter(Collider other) { }
+    public override void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall") && characterIndex == 2)
+        {
+            if (other.transform.position.x < stateMachine.transform.position.x)
+            {
+                stateMachine.SwitchState(new WallState(stateMachine, characterIndex, 1));
+            }
+            else
+            {
+                stateMachine.SwitchState(new WallState(stateMachine, characterIndex, -1));
+            }
+        }
+    }
     public override void Tick(float deltaTime)
     {
         if (stateMachine.PlayerRb.velocity.y == 0 && stateMachine.GroundChecker.IsGrounded)
@@ -30,9 +43,5 @@ public class JumpState : PlayerBaseState
             stateMachine.SwitchState(new RunState(stateMachine, characterIndex));
         }
     }
-    private void Jump(int characterIndex)
-    {
-        stateMachine.PlayerRb.velocity += new Vector2(0, stateMachine.JumpPower[characterIndex]);
-        stateMachine.Yaz("nasilolum,");
-    }
+
 }

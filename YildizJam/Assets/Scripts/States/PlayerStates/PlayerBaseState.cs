@@ -31,4 +31,8 @@ public abstract class PlayerBaseState : State
             stateMachine.transform.localScale = new Vector2(Mathf.Sign(stateMachine.PlayerRb.velocity.x), 1f);
         }
     }
+    protected void Jump(int characterIndex, int wallDir = 0)
+    {
+        stateMachine.PlayerRb.velocity += new Vector2(wallDir*4f, stateMachine.JumpPower[characterIndex]);     // burasi guncellenebilir
+    }
 }
