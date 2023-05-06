@@ -18,11 +18,11 @@ public abstract class PlayerBaseState : State
     }
     protected void Move(Vector3 input, int characterIndex)
     {
-        stateMachine.PlayerRb.MovePosition(stateMachine.transform.position+stateMachine.ForceReceiver.Movement + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
+        stateMachine.PlayerRb.MovePosition(stateMachine.transform.position + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
     }
-    protected void Jump(int charactedIndex)
+    protected void Jump(int characterIndex,float deltaTime)
     {
-        stateMachine.PlayerRb.AddForce(new Vector2(0, stateMachine.JumpPower[charactedIndex]));
+        stateMachine.PlayerRb.AddForce(new Vector2(stateMachine.PlayerRb.velocity.x, stateMachine.JumpPower[characterIndex]) * deltaTime);
 
     }
 }

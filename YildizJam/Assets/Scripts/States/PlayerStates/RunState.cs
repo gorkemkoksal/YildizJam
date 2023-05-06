@@ -16,7 +16,7 @@ public class RunState : PlayerBaseState
     public override void Enter()
     {
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
-        onJump+=OnJump;
+        onJump += OnJump;
     }
 
     public override void Exit()
@@ -34,7 +34,7 @@ public class RunState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded) || stateMachine.PlayerRb.velocity.y<0)
+        if ((Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded) || stateMachine.PlayerRb.velocity.y < 0)
         {
             onJump?.Invoke();
         }
