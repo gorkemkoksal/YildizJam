@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 0, z: 0}
+  isPooled: 1
 --- !u!58 &5154846404127817303
 CircleCollider2D:
   m_ObjectHideFlags: 0

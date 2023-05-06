@@ -3,13 +3,12 @@ using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private Vector3 speed;
-    private Vector3 bulletSpeed;
+    [SerializeField] private bool isPooled;
+
+    [SerializeField] private Vector3 defaultBulletSpeed = new Vector3(10, 0, 0);
+    private Vector3 speed;
     private IObjectPool<Bullet> pool;
-    private void Start()
-    {
-        bulletSpeed = speed;
-    }
+
     void Update()
     {
         transform.position += speed * Time.deltaTime;
@@ -20,17 +19,35 @@ public class Bullet : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
-        pool.Release(this);
-    }
-    public void SetBulletSpeed(bool isLookingLeft)
-    {
-        if (isLookingLeft)
+        if (isPooled)
         {
-            speed = -bulletSpeed;
+            pool.Release(this);
         }
         else
         {
-            speed = bulletSpeed;
+            Destroy(this);
+        }
+    }
+    public void SetBulletSpeed(bool isLookingRight)
+    {
+        if (!isLookingRight)
+        {
+            speed = -defaultBulletSpeed;
+        }
+        if (isLookingRight)
+        {
+            speed = defaultBulletSpeed;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isPooled)
+        {
+            pool.Release(this);
+        }
+        else
+        {
+            Destroy(this);
         }
     }
 }
