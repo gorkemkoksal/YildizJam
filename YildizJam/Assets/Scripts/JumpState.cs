@@ -7,13 +7,17 @@ public class JumpState : PlayerBaseState
 {
     //private readonly int JumpHash = Animator.StringToHash("Jump");
     private int jumpCounter;
-    public JumpState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex) { }
+    private Rigidbody2D playerRb;
+    public JumpState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex)
+    {
+        playerRb = stateMachine.PlayerRb;
+    }
     public override void Enter()
     {
         Jump(characterIndex);
         stateMachine.GroundChecker.IsGrounded = false;
         jumpCounter = 1;
-    //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
+        //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
 
     }
     public override void Exit()
@@ -42,6 +46,11 @@ public class JumpState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
+        if (Input.GetButtonUp("Jump") && stateMachine.PlayerRb.velocity.y > 0)
+        {
+            playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * 0.5f);
+        }
+
         if (characterIndex == 0 && jumpCounter < 2 && Input.GetKeyDown(KeyCode.Space))
         {
             jumpCounter = 2;
