@@ -13,6 +13,7 @@ public class FallingState : PlayerBaseState
     }
     public override void Exit()
     {
+        isSecondJump = false;
     }
     public override void FixedTick(float fixedDeltatime)
     {
@@ -26,6 +27,7 @@ public class FallingState : PlayerBaseState
         }
         if (characterIndex == 0 && !isSecondJump && Input.GetKeyDown(KeyCode.Space))
         {
+            isSecondJump = true;
             Jump(characterIndex);
         }
     }
