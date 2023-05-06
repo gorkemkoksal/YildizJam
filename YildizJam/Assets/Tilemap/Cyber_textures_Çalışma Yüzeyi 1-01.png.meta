@@ -1,0 +1,321 @@
+fileFormatVersion: 2
+guid: e9b1238094cb47344abfa2c06ffdfb2a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_0"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 120
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f621928413a2a45bcdf8cea03f1f44
+      internalID: -1209262886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_1"
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 120
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd3ab68f7a67ff42b339068172bda32
+      internalID: 908373958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_2"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 120
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ffd5ec35e4c2c4cb37d8c24f368019
+      internalID: -1687355611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_3"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 60
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8beaf7c8d5e2f9f469b1b186718b9936
+      internalID: 972463612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_4"
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 60
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a30e5d551f1fbf41a2edcdc61ff6a9b
+      internalID: 243119511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_5"
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 60
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29242dc26fa03b44904fd9e27ecd5b9
+      internalID: -509847241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_6"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3828814ef343b42817bbae36b66e5a
+      internalID: -980947402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_7"
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82d353af35fda840ba1a76eb792c447
+      internalID: -2094138256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_8"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 59.333332
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09b66943a3164e4496e10cfd6dfec0d
+      internalID: 554369964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_0": -1209262886
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_1": 908373958
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_2": -1687355611
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_3": 972463612
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_4": 243119511
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_5": -509847241
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_6": -980947402
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_7": -2094138256
+      "Cyber_textures_\xC7al\u0131\u015Fma Y\xFCzeyi 1-01_8": 554369964
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
