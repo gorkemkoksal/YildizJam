@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
@@ -16,13 +17,18 @@ public abstract class PlayerBaseState : State
     {
         this.stateMachine = stateMachine;
     }
-    protected void Move(Vector3 input, int characterIndex)
+    protected void Move(float input, int characterIndex)
     {
-        stateMachine.PlayerRb.MovePosition(stateMachine.transform.position + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
+        //stateMachine.PlayerRb.MovePosition(new Vector2(stateMachine.transform.position.x, stateMachine.transform.position.y) + input * stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime);
+        // stateMachine.PlayerRb.AddForce(stateMachine.MovementSpeed[characterIndex] * Time.fixedDeltaTime * input);
+        stateMachine.PlayerRb.velocity = new Vector2(input * stateMachine.MovementSpeed[characterIndex], stateMachine.PlayerRb.velocity.y);
     }
-    protected void Jump(int characterIndex)
+    protected void FlipSprite()
     {
-        stateMachine.PlayerRb.AddForce(new Vector2(stateMachine.PlayerRb.velocity.x, stateMachine.JumpPower[characterIndex]));
-
+        bool playerHasHorizontalSpeed = Mathf.Abs(stateMachine.PlayerRb.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
+        {
+            stateMachine.transform.localScale = new Vector2(Mathf.Sign(stateMachine.PlayerRb.velocity.x), 1f);
+        }
     }
 }

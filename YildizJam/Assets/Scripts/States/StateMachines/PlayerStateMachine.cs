@@ -12,11 +12,13 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Rigidbody2D PlayerRb { get; private set; }
     [field: SerializeField] public float[] MovementSpeed { get; private set; } = new float[] { 3, 5, 7 };
     [field: SerializeField] public float[] JumpPower { get; private set; } = new float[] { 3, 5, 7 };
+    [field: SerializeField] public float MaxSpeed { get; private set; }
     [field: SerializeField] public GameObject[] SpecialWeapons { get; private set; }
 
     private void Start()
     {
         SwitchState(new RunState(this,1));
+        
     }
     public void Yaz(string something)
     {
