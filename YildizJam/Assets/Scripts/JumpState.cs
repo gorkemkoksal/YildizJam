@@ -7,7 +7,7 @@ public class JumpState : PlayerBaseState
 {
     //private readonly int JumpHash = Animator.StringToHash("Jump");
     private int jumpCounter;
-    private Rigidbody2D playerRb;
+    private Rigidbody2D playerRb;    
     public JumpState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex)
     {
         playerRb = stateMachine.PlayerRb;
@@ -46,6 +46,7 @@ public class JumpState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
+        stateMachine.CoyotaTimeCounter -= Time.deltaTime;
         if (Input.GetButtonUp("Jump") && stateMachine.PlayerRb.velocity.y > 0)
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * 0.5f);

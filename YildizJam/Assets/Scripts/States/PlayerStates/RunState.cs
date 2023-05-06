@@ -7,10 +7,12 @@ public class RunState : PlayerBaseState
     public RunState(PlayerStateMachine stateMachine, int characterIndex) : base(stateMachine, characterIndex) { }
     public override void Enter()
     {
+        stateMachine.CoyotaTimeCounter = stateMachine.CoyotaTime;
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
         stateMachine.GroundChecker.OnFalling += OnFall;
     }
-    public override void Exit() {
+    public override void Exit()
+    {
         stateMachine.GroundChecker.OnFalling -= OnFall;
     }
     public override void FixedTick(float fixedDeltatime)
@@ -23,7 +25,17 @@ public class RunState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.JumpBufferCounter = stateMachine.JumpBufferTime;
+        }
+        else
+        {
+            stateMachine.JumpBufferCounter -= Time.deltaTime;
+        }
+        //if (Input.GetKeyDown(KeyCode.Space) && stateMachine.GroundChecker.IsGrounded)
+        //if (Input.GetKeyDown(KeyCode.Space) && stateMachine.CoyotaTimeCounter > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && stateMachine.JumpBufferCounter > 0)
         {
             stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
         }
@@ -31,5 +43,6 @@ public class RunState : PlayerBaseState
     private void OnFall()
     {
         stateMachine.SwitchState(new FallingState(stateMachine, characterIndex));
-        stateMachine.Yaz("fallingstate");    }
+        stateMachine.Yaz("fallingstate");
+    }
 }
