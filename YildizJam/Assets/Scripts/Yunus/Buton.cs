@@ -60,6 +60,7 @@ public class Buton : MonoBehaviour
     }
     public void TryAgain()
     {
+
          SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     

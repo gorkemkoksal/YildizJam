@@ -11,10 +11,13 @@ public class ModuleTransport : MonoBehaviour
     } 
     void Update()
     {
+        if(GameObject.Find("Module(Clone)") != null)
+        {
         if(Input.GetKeyDown(KeyCode.E)){
             Transport();
             OnModule?.Invoke();
             Destroy(GameObject.Find("Module(Clone)"));
+        }
         }      
     }
     void Transport()
