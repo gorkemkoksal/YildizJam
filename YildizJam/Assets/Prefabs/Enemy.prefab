@@ -12,11 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
-<<<<<<< Updated upstream
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
-=======
-  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
->>>>>>> Stashed changes
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -82,11 +78,8 @@ GameObject:
   - component: {fileID: 2075754076197107967}
   - component: {fileID: 2075754076197107952}
   - component: {fileID: 2075754076197107954}
-<<<<<<< Updated upstream
   - component: {fileID: 20754996}
   - component: {fileID: 20754997}
-=======
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -179,7 +172,6 @@ MonoBehaviour:
   movementSpeed: 5
   hitDistance: 7
   timeBetweenAttacks: 1
-<<<<<<< Updated upstream
 --- !u!50 &20754996
 Rigidbody2D:
   serializedVersion: 4
@@ -227,8 +219,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-=======
->>>>>>> Stashed changes
 --- !u!1 &2075754077032720739
 GameObject:
   m_ObjectHideFlags: 0
