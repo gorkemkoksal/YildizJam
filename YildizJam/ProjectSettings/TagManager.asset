@@ -13,6 +13,7 @@ TagManager:
   - Surface
   - Wall
   - StopCanvas
+  - Bullet
   layers:
   - Default
   - TransparentFX
