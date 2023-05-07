@@ -34,5 +34,6 @@ public class FallingState : PlayerBaseState
     public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
+        
     }
 }

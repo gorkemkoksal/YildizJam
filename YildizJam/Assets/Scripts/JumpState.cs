@@ -19,19 +19,13 @@ public class JumpState : PlayerBaseState
         jumpCounter = 1;
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
         stateMachine.PortalScript.OnChange += SwapCharacter;
-<<<<<<< Updated upstream
-        stateMachine.Module.OnModule += SwapCharacter;
-=======
->>>>>>> Stashed changes
+        stateMachine.ModuleTransport.OnModule += SwapCharacter;
     }
     public override void Exit()
     {
         jumpCounter = 0;
         stateMachine.PortalScript.OnChange -= SwapCharacter;
-<<<<<<< Updated upstream
-        stateMachine.Module.OnModule -= SwapCharacter;
-=======
->>>>>>> Stashed changes
+        stateMachine.ModuleTransport.OnModule -= SwapCharacter;
     }
     public override void FixedTick(float fixedDeltatime)
     {
