@@ -42,6 +42,11 @@ public class PortalScript : MonoBehaviour
             {
              if (other.gameObject.tag == "RedPortal")
              {
+                if(this.gameObject.tag == "Player")
+                {
+                    
+
+                }
 
                 player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
                 portalSoundEffect.clip = prt;
@@ -51,6 +56,12 @@ public class PortalScript : MonoBehaviour
              }
              if (other.gameObject.tag == "BluePortal")
              {
+
+                if(this.gameObject.tag == "Player")
+                {
+                    
+
+                }
                 player.transform.position = GameObject.Find("RedPortal(Clone)").transform.position;
                 portalSoundEffect.clip = prt;
                 portalSoundEffect.Play();
