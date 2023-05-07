@@ -52,6 +52,7 @@ public class Buton : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+        GameObject.FindGameObjectWithTag("StopCanvas").SetActive(false);
     }
     public void Audio()
     {

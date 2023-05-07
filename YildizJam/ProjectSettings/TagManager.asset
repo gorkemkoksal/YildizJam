@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Surface
   - Wall
+  - StopCanvas
   layers:
   - Default
   - TransparentFX
