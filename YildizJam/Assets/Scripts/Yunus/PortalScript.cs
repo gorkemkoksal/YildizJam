@@ -40,13 +40,25 @@ public class PortalScript : MonoBehaviour
                     {
                         OnChange?.Invoke();
                     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                     player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
                     portalSoundEffect.clip = prt;
                     portalSoundEffect.Play();
                     transformation = false;
+<<<<<<< Updated upstream
                 }
                 if (other.gameObject.tag == "BluePortal")
                 {
+=======
+
+                }
+                if (other.gameObject.tag == "BluePortal")
+                {
+
+>>>>>>> Stashed changes
                     if (this.gameObject.tag == "Player")
                     {
                         OnChange?.Invoke();
@@ -55,6 +67,10 @@ public class PortalScript : MonoBehaviour
                     portalSoundEffect.clip = prt;
                     portalSoundEffect.Play();
                     transformation = false;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                 }
             }
         }

@@ -9,7 +9,10 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GroundChecker GroundChecker { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
     [field: SerializeField] public PortalScript PortalScript { get; private set; }
+<<<<<<< Updated upstream
     [field: SerializeField] public Module Module { get; private set; }
+=======
+>>>>>>> Stashed changes
     [field: SerializeField] public GameObject NormalBullet { get; private set; }
     [field: SerializeField] public Rigidbody2D PlayerRb { get; private set; }
     [field: SerializeField] public float[] MovementSpeed { get; private set; } = new float[] { 3, 5, 7 };
@@ -25,6 +28,10 @@ public class PlayerStateMachine : StateMachine
     private void Start()
     {
         SwitchState(new RunState(this, 0));
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }
     public void Yaz(string something)
     {
