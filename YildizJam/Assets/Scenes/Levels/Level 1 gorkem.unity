@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
-      propertyPath: <KnockBackForce>k__BackingField.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7940281236749552331, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
-      propertyPath: <KnockBackDuration>k__BackingField
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7940281236749552334, guid: e225b23e91e94494d8c7f8a8b16c2e0b, type: 3}
       propertyPath: m_Name
       value: Player

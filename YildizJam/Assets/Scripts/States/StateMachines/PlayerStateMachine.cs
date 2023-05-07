@@ -19,8 +19,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float JumpBufferTime { get; private set; } = 0.3f;
     public float JumpBufferCounter = 0f;
     [field: SerializeField] public Vector2 KnockBackForce { get; private set; }
-
-    [field: SerializeField] public GameObject[] SpecialWeapons { get; private set; }
+    [field: SerializeField] public GameObject[] Characters { get; private set; }
 
     private void Start()
     {

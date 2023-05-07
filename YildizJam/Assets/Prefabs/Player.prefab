@@ -966,13 +966,16 @@ MonoBehaviour:
   - 10
   - 10
   - 0
-  <KnockBackDuration>k__BackingField: 0
+  <KnockBackDuration>k__BackingField: 0.2
   <CoyotaTime>k__BackingField: 0.2
   CoyotaTimeCounter: 0
   <JumpBufferTime>k__BackingField: 0.3
   JumpBufferCounter: 0
-  <KnockBackForce>k__BackingField: {x: 0, y: 0}
-  <SpecialWeapons>k__BackingField: []
+  <KnockBackForce>k__BackingField: {x: 10, y: 0}
+  <Characters>k__BackingField:
+  - {fileID: 7940281238233925761}
+  - {fileID: 7380556133666476765}
+  - {fileID: 1648267590601760524}
 --- !u!61 &7940281236749552333
 BoxCollider2D:
   m_ObjectHideFlags: 0

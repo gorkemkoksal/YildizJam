@@ -52,9 +52,14 @@ public abstract class PlayerBaseState : State
     }
     protected void SwapCharacter()
     {
+        for (int i = 0; i <2; i++)
+        {
+            stateMachine.Characters[i].SetActive(false);
+        }
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             characterIndex = 1;
+            stateMachine.Characters[1].SetActive(true);
             stateMachine.SwitchState(new RunState(stateMachine, 1));
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -62,11 +67,13 @@ public abstract class PlayerBaseState : State
             if (characterIndex == 0)
             {
                 characterIndex = 1;
+                stateMachine.Characters[1].SetActive(true);
                 stateMachine.SwitchState(new RunState(stateMachine, 1));
             }
             else
             {
                 characterIndex = 0;
+                stateMachine.Characters[0].SetActive(true);
                 stateMachine.SwitchState(new RunState(stateMachine, 0));
             }
         }
@@ -78,6 +85,7 @@ public abstract class PlayerBaseState : State
                 random = Random.Range(0, 3);
             }
             characterIndex = random;
+            stateMachine.Characters[random].SetActive(true);
             stateMachine.SwitchState(new RunState(stateMachine, random));
         }
     }

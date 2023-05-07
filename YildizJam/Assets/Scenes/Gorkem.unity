@@ -629,37 +629,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 0.6}
   m_EdgeRadius: 0
---- !u!1 &1329624358
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1329624359}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1329624359
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329624358}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.67, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1933684743}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407106365
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,11 +855,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1933684743 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2075754075669935824, guid: a1834fa9e505a674fb5080fedfadee63, type: 3}
-  m_PrefabInstance: {fileID: 2075754077561652951}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2075754077561652951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -950,16 +914,7 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 752023033}
-    - target: {fileID: 2075754076197107954, guid: a1834fa9e505a674fb5080fedfadee63, type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1329624359}
-    - target: {fileID: 2075754076197107954, guid: a1834fa9e505a674fb5080fedfadee63, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 1250227740446225646, guid: 0e4e1539135b93d42a1ef2cd51a05dab, type: 3}
-    m_RemovedComponents:
-    - {fileID: 421851813495892221, guid: a1834fa9e505a674fb5080fedfadee63, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1834fa9e505a674fb5080fedfadee63, type: 3}
 --- !u!1001 &7940281236293615414
 PrefabInstance:
