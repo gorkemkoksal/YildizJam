@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class PortalScript : MonoBehaviour
     AudioSource portalSoundEffect;
     public AudioClip prt;
 
-    
+    public event Action OnChange;
 
     private bool transformation = true;
 
@@ -29,60 +30,45 @@ public class PortalScript : MonoBehaviour
 
         }
     }
-
-
-
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (transformation == true)
         {
-            if((GameObject.Find("BluePortal(Clone)") != null ) & (GameObject.Find("RedPortal(Clone)") != null))
+            if ((GameObject.Find("BluePortal(Clone)") != null) & (GameObject.Find("RedPortal(Clone)") != null))
             {
-             if (other.gameObject.tag == "RedPortal")
-             {
-                if(this.gameObject.tag == "Player")
+                if (other.gameObject.tag == "RedPortal")
                 {
-                    
+                    if (this.gameObject.tag == "Player")
+                    {
+                        OnChange?.Invoke();
+                    }
+
+                    player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
+                    portalSoundEffect.clip = prt;
+                    portalSoundEffect.Play();
+                    transformation = false;
 
                 }
-
-                player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
-                portalSoundEffect.clip = prt;
-                portalSoundEffect.Play();
-                transformation = false;
-
-             }
-             if (other.gameObject.tag == "BluePortal")
-             {
-
-                if(this.gameObject.tag == "Player")
+                if (other.gameObject.tag == "BluePortal")
                 {
-                    
+
+                    if (this.gameObject.tag == "Player")
+                    {
+                        OnChange?.Invoke();
+                    }
+                    player.transform.position = GameObject.Find("RedPortal(Clone)").transform.position;
+                    portalSoundEffect.clip = prt;
+                    portalSoundEffect.Play();
+                    transformation = false;
 
                 }
-                player.transform.position = GameObject.Find("RedPortal(Clone)").transform.position;
-                portalSoundEffect.clip = prt;
-                portalSoundEffect.Play();
-                transformation = false;
-
-             }
             }
-
-
         }
-
-        
-
-
-
-
     }
     IEnumerator Teleport()
-        {
-            transformation = false;
-            yield return new WaitForSeconds(0.2f);
-            transformation = true;
-        }
+    {
+        transformation = false;
+        yield return new WaitForSeconds(0.2f);
+        transformation = true;
+    }
 }

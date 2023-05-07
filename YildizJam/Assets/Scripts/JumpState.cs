@@ -18,11 +18,12 @@ public class JumpState : PlayerBaseState
         stateMachine.GroundChecker.IsGrounded = false;
         jumpCounter = 1;
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
-
+        stateMachine.PortalScript.OnChange += SwapCharacter;
     }
     public override void Exit()
     {
         jumpCounter = 0;
+        stateMachine.PortalScript.OnChange -= SwapCharacter;
     }
     public override void FixedTick(float fixedDeltatime)
     {

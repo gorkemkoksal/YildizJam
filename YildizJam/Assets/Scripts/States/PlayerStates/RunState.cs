@@ -10,10 +10,12 @@ public class RunState : PlayerBaseState
         stateMachine.CoyotaTimeCounter = stateMachine.CoyotaTime;
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
         stateMachine.GroundChecker.OnFalling += OnFall;
+        stateMachine.PortalScript.OnChange += SwapCharacter;
     }
     public override void Exit()
     {
         stateMachine.GroundChecker.OnFalling -= OnFall;
+        stateMachine.PortalScript.OnChange -= SwapCharacter;
     }
     public override void FixedTick(float fixedDeltatime)
     {

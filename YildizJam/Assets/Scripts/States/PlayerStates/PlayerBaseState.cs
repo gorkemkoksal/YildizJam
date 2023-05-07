@@ -1,6 +1,8 @@
 using DG.Tweening;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class PlayerBaseState : State
 {
@@ -46,6 +48,37 @@ public abstract class PlayerBaseState : State
             {
                 stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
             }
+        }
+    }
+    protected void SwapCharacter()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            characterIndex = 1;
+            stateMachine.SwitchState(new RunState(stateMachine, 1));
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            if (characterIndex == 0)
+            {
+                characterIndex = 1;
+                stateMachine.SwitchState(new RunState(stateMachine, 1));
+            }
+            else
+            {
+                characterIndex = 0;
+                stateMachine.SwitchState(new RunState(stateMachine, 0));
+            }
+        }
+        else if (SceneManager.GetActiveScene().buildIndex >= 3)
+        {
+            var random = Random.Range(0, 3);
+            while (random == characterIndex)
+            {
+                random = Random.Range(0, 3);
+            }
+            characterIndex = random;
+            stateMachine.SwitchState(new RunState(stateMachine, random));
         }
     }
 }
