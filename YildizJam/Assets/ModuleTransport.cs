@@ -17,7 +17,11 @@ public class ModuleTransport : MonoBehaviour
             Destroy(GameObject.Find("Module(Clone)"));
         }      
     }
-    void Transport(){
+    void Transport()
+    {
+        if(GameObject.Find("Module(Clone)") != null)
+        {
         transform.position = GameObject.Find("Module(Clone)").transform.position;
+        }
     }
 }

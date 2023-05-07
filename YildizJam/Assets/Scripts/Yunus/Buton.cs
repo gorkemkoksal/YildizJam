@@ -58,6 +58,10 @@ public class Buton : MonoBehaviour
     {
         au.mute = !au.mute;
     }
+    public void TryAgain()
+    {
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     
         
     
