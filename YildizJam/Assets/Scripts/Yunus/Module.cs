@@ -9,7 +9,7 @@ public class Module : MonoBehaviour
 
     Rigidbody2D rb;
 
-    public event Action OnModule;
+   // public event Action OnModule;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

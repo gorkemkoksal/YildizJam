@@ -9,7 +9,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GroundChecker GroundChecker { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
     [field: SerializeField] public PortalScript PortalScript { get; private set; }
-    [field: SerializeField] public Module Module { get; private set; }
+    [field: SerializeField] public ModuleTransport ModuleTransport { get; private set; }
     [field: SerializeField] public GameObject NormalBullet { get; private set; }
     [field: SerializeField] public Rigidbody2D PlayerRb { get; private set; }
     [field: SerializeField] public float[] MovementSpeed { get; private set; } = new float[] { 3, 5, 7 };

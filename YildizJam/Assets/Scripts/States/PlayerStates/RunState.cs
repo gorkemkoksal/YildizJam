@@ -11,13 +11,13 @@ public class RunState : PlayerBaseState
         //  stateMachine.Animator.CrossFadeInFixedTime(MovementBlendTreeHash, CrossFadeDuration);
         stateMachine.GroundChecker.OnFalling += OnFall;
         stateMachine.PortalScript.OnChange += SwapCharacter;
-        stateMachine.Module.OnModule += SwapCharacter;
+        stateMachine.ModuleTransport.OnModule += SwapCharacter;
     }
     public override void Exit()
     {
         stateMachine.GroundChecker.OnFalling -= OnFall;
         stateMachine.PortalScript.OnChange -= SwapCharacter;
-        stateMachine.Module.OnModule -= SwapCharacter;
+        stateMachine.ModuleTransport.OnModule -= SwapCharacter;
     }
     public override void FixedTick(float fixedDeltatime)
     {
