@@ -77,11 +77,7 @@ public class ModuleGun : MonoBehaviour
 
          yield return new WaitForSeconds(3);
 
-         moduleShooting = true;
-
-
-            
-        
+         moduleShooting = true;      
         }
         
 

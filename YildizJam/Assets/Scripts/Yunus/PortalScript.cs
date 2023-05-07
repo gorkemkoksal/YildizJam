@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PortalScript : MonoBehaviour
 {
-
     //IŞINLANMASINI İSTEDİĞİNİZ GAMEOBJECTIN İÇİNE ATILMASI GEREKN BİR KOD.
     [SerializeField] private GameObject redPortal;
     [SerializeField] private GameObject bluePortal;
@@ -27,7 +26,6 @@ public class PortalScript : MonoBehaviour
         if (transformation == false)
         {
             StartCoroutine(Teleport());
-
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,16 +40,13 @@ public class PortalScript : MonoBehaviour
                     {
                         OnChange?.Invoke();
                     }
-
                     player.transform.position = GameObject.Find("BluePortal(Clone)").transform.position;
                     portalSoundEffect.clip = prt;
                     portalSoundEffect.Play();
                     transformation = false;
-
                 }
                 if (other.gameObject.tag == "BluePortal")
                 {
-
                     if (this.gameObject.tag == "Player")
                     {
                         OnChange?.Invoke();
@@ -60,7 +55,6 @@ public class PortalScript : MonoBehaviour
                     portalSoundEffect.clip = prt;
                     portalSoundEffect.Play();
                     transformation = false;
-
                 }
             }
         }
