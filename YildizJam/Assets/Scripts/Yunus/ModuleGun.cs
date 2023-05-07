@@ -27,20 +27,12 @@ public class ModuleGun : MonoBehaviour
         moduleCoolDown = 3f;
         moduleSoundEffect = GetComponent<AudioSource>();
     }
-    private void LookAtMouse()
-    {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition - mouseTransform.position);
-        float angle = Mathf.Atan2(direction.y , direction.x ) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle-90 , Vector3.forward);
-        mouseTransform.rotation = rotation;
-        
-
-    }
+    
 
    
     void Update()
     {
-       LookAtMouse();
+    
        BulletShoot();
        StartCoroutine(ModuleShoot());    
     }
@@ -70,6 +62,7 @@ public class ModuleGun : MonoBehaviour
         {
             moduleSoundEffect.clip = moduleSound;
             moduleSoundEffect.Play();
+            
             
         
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

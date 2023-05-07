@@ -31,7 +31,7 @@ public class PortalGun : MonoBehaviour
 
     void Update()
     {
-        LookAtMouse();
+        
         BulletShoot();
         PortalSelect();
         if (Input.GetMouseButtonDown(1))
@@ -40,15 +40,7 @@ public class PortalGun : MonoBehaviour
         }
     }
 
-    private void LookAtMouse()
-    {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition - mouseTransform.position);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        mouseTransform.rotation = rotation;
-
-
-    }
+    
     private void BulletShoot()
     {
         if (Input.GetMouseButtonDown(0))
