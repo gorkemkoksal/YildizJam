@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level1.unity
     guid: f093839c945a52446a87d0b12e3b8955
   - enabled: 1
-    path: Assets/Scenes/Levels/MainMenu.unity
+    path: "Assets/Scenes/Levels/Ba\u015Flang\u0131\xE7.unity"
     guid: a1539da8991f14e4d89335025c6cc394
   - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity
