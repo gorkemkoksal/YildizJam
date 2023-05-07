@@ -21,9 +21,6 @@ public class PlayerStateMachine : StateMachine
     public float JumpBufferCounter = 0f;
     [field: SerializeField] public Vector2 KnockBackForce { get; private set; }
     [field: SerializeField] public GameObject[] Characters { get; private set; }
-    [field: SerializeField] public Canvas DeadCanvas { get; private set; }
-
-
 
     private void Start()
     {

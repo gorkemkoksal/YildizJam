@@ -42,11 +42,11 @@ public abstract class PlayerBaseState : State
         {
             if (other.transform.position.x > stateMachine.transform.position.x)
             {
-                stateMachine.SwitchState(new DeadState(stateMachine, characterIndex, -1));
+                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, -1));
             }
             else
             {
-                stateMachine.SwitchState(new DeadState(stateMachine, characterIndex, +1));
+                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
             }
         }
     }
