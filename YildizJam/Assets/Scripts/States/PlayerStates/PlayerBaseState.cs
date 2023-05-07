@@ -11,8 +11,6 @@ public abstract class PlayerBaseState : State
 
     //protected const float AnimatorDampTime = 0.1f;
     //protected const float CrossFadeDuration = 0.1f;
-
-    
     public PlayerBaseState(PlayerStateMachine stateMachine, int characterIndex)
     {
         this.stateMachine = stateMachine;
@@ -44,15 +42,12 @@ public abstract class PlayerBaseState : State
         {
             if (other.transform.position.x > stateMachine.transform.position.x)
             {
-                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, -1));
-                
+                stateMachine.SwitchState(new DeadState(stateMachine, characterIndex, -1));
             }
             else
             {
-                stateMachine.SwitchState(new KnockbackState(stateMachine, characterIndex, +1));
+                stateMachine.SwitchState(new DeadState(stateMachine, characterIndex, +1));
             }
-            
-
         }
     }
     protected void SwapCharacter()

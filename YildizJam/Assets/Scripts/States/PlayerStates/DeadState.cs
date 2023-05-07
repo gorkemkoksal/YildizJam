@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnockbackState : PlayerBaseState
+public class DeadState : PlayerBaseState
 {
     //private readonly int KnockbackHash = Animator.StringToHash("Knockback");
     private int knockBackDirection;
     private float timer;
-    public KnockbackState(PlayerStateMachine stateMachine, int characterIndex, int knockBackDirection) : base(stateMachine, characterIndex)
+    public DeadState(PlayerStateMachine stateMachine, int characterIndex, int knockBackDirection) : base(stateMachine, characterIndex)
     {
         this.knockBackDirection = knockBackDirection;
     }
@@ -28,14 +28,15 @@ public class KnockbackState : PlayerBaseState
         timer += Time.deltaTime;
         if (timer >= stateMachine.KnockBackDuration)
         {
-            if (stateMachine.GroundChecker.IsGrounded)
-            {
-                stateMachine.SwitchState(new RunState(stateMachine, characterIndex));
-            }
-            else
-            {
-                stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
-            }
+            //if (stateMachine.GroundChecker.IsGrounded)
+            //{
+            //    stateMachine.SwitchState(new RunState(stateMachine, characterIndex));
+            //}
+            //else
+            //{
+            //    stateMachine.SwitchState(new JumpState(stateMachine, characterIndex));
+            //}
+            stateMachine.DeadCanvas.gameObject.SetActive(true);
         }
     }
 }
