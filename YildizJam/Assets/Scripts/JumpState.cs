@@ -59,6 +59,7 @@ public class JumpState : PlayerBaseState
         {
             jumpCounter = 2;
             Jump(characterIndex);
+            playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * 0.5f);
         }
         if (stateMachine.GroundChecker.IsGrounded)
         {
