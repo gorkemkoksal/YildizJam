@@ -15,30 +15,21 @@ public class ModuleGun : MonoBehaviour
 
     AudioSource moduleSoundEffect;
 
-
-    
-
     [SerializeField] private float bulletVelocity = 20f;
     private Transform mouseTransform;
     void Start()
     {
+        moduleShooting = true;
         mouseTransform = this.transform;
         bulletVelocity = 20f;
         moduleCoolDown = 3f;
         moduleSoundEffect = GetComponent<AudioSource>();
-    }
-    
-
-   
+    } 
     void Update()
-    {
-    
+    { 
        BulletShoot();
        StartCoroutine(ModuleShoot());    
     }
-
-   
-
     private void BulletShoot()
     {
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -62,9 +53,7 @@ public class ModuleGun : MonoBehaviour
         {
             moduleSoundEffect.clip = moduleSound;
             moduleSoundEffect.Play();
-            
-            
-        
+                             
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
          Vector2 direction = (Vector2)((worldMousePos - transform.position));
          direction.Normalize();
@@ -79,8 +68,5 @@ public class ModuleGun : MonoBehaviour
 
          moduleShooting = true;      
         }
-        
-
     }
-    
 }

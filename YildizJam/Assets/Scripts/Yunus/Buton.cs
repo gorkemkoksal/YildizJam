@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Buton : MonoBehaviour
 {
-
     AudioSource au;
 
     private void Start() {
