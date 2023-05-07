@@ -16,12 +16,12 @@ public class Module : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position = transform.position;
-            Destroy(gameObject);
-            OnModule?.Invoke();
-        }
+        // if(Input.GetKeyDown(KeyCode.E))
+        // {
+        //     GameObject.FindGameObjectWithTag("Player").transform.position = transform.position;
+        //     Destroy(gameObject);
+        //     OnModule?.Invoke();
+        // }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
