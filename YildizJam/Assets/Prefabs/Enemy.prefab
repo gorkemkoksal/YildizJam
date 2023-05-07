@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2075754075669935824}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c42c2ac4864dbe4e8af953d8884b43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPoint1: {fileID: 2075754077537800621}
-  patrolPoint2: {fileID: 2075754077032720738}
-  spawnPoint: {fileID: 1329624359}
+  patrolRightOffset: 7
+  patrolLeftOffset: -5
+  bulletSpawnPoint: {fileID: 1329624359}
   player: {fileID: 0}
   bulletPrefab: {fileID: 1250227740446225646, guid: 0e4e1539135b93d42a1ef2cd51a05dab, type: 3}
   movementSpeed: 5
